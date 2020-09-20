@@ -1,0 +1,22 @@
+<div id="data">
+  <input type="text" id="myInput" required />
+  <button id="admin-form-btn" onclick="axiosdrama()">Enter</button>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  async function axiosdrama() {
+    var token = document.getElementById("myInput").value;
+    const res = await axios.get("/api/v1/users", {
+      headers: {
+        authorization: "Basic " + token,
+      },
+    });
+    let content = "";
+    res.data.forEach((e) => {
+      const { _id, username, __v } = e;
+      content += `_id: ${_id} <br> name: ${username} <br> __v: ${__v} <br><br>`;
+    });
+    console.log(res.data);
+    document.getElementById("data").innerHTML = content;
+  }
+</script>
