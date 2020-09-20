@@ -1,10 +1,6 @@
 import User from "../models/users.js";
 import jwt from "jsonwebtoken";
-import config from "../config.js";
 import passport from "passport";
-
-const environment = process.env.NODE_ENV;
-const stage = config[environment];
 
 export default {
   add: (req, res) => {
