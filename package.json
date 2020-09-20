@@ -6,7 +6,11 @@
   "scripts": {
     "build": "babel index.js -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development nodemon index.js"
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "14.9.0"
   },
   "keywords": [],
   "type": "module",

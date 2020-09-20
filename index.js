@@ -59,9 +59,9 @@ app.use("/api/v1", (req, res, next) => {
   res.send("Hello");
   next();
 });
-
-app.listen(`${stage.port}`, () => {
-  console.log("Server online..." + stage.port);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log("Server online..." + PORT);
 });
 
 app.use(function (req, res, next) {
