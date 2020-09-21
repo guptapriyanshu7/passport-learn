@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 import passport from "passport";
 import User from "./models/users.js";
 import session from "express-session";
-import logger from "morgan";
+// import logger from "morgan";
 
 const app = express();
 
