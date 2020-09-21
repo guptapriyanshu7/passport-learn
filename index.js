@@ -51,16 +51,16 @@ mongoose
 
 app.use("/api/v1", routes(router));
 
-// if (environment !== "production") {
-//   app.use(logger("dev"));
-// }
+if (environment !== "production") {
+  app.use(logger("dev"));
+}
 
 app.use("/api/v1", (req, res, next) => {
-  res.send("Hello" + environment);
+  res.send("Hello");
   next();
 });
-// const PORT = process.env.PORT || 3000;
-app.listen(`${stage.port}`, () => {
+
+app.listen(stage.port, () => {
   console.log("Server online..." + stage.port);
 });
 
