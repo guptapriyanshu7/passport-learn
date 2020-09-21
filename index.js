@@ -22,7 +22,7 @@ app.use(
 
 const router = express.Router();
 const uri = process.env.MONGO_CONN_URI;
-const environment = process.env.NODE_ENV;
+const environment = process.env.NODE_ENV || "development";
 const stage = config[environment];
 app.use(bodyParser.json());
 
@@ -59,9 +59,9 @@ app.use("/api/v1", (req, res, next) => {
   res.send("Hello" + environment);
   next();
 });
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("Server online..." + PORT);
+// const PORT = process.env.PORT || 3000;
+app.listen(`${stage.port}`, () => {
+  console.log("Server online..." + stage.port);
 });
 
 app.use(function (req, res, next) {

@@ -1,5 +1,8 @@
 export default {
   development: {
-    port: process.env.PORT || 3000,
+    port: 3000,
+  },
+  production: {
+    port: process.env.PORT,
   },
 };
