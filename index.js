@@ -1,6 +1,6 @@
 import "dotenv/config.js";
 import express from "express";
-import logger from "morgan";
+// import logger from "morgan";
 import bodyParser from "body-parser";
 import config from "./config.js";
 import routes from "./routes/index.js";
@@ -51,9 +51,9 @@ mongoose
 
 app.use("/api/v1", routes(router));
 
-if (environment !== "production") {
-  app.use(logger("dev"));
-}
+// if (environment !== "production") {
+//   app.use(logger("dev"));
+// }
 
 app.use("/api/v1", (req, res, next) => {
   res.send("Hello");
