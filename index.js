@@ -1,6 +1,5 @@
 import "dotenv/config.js";
 import express from "express";
-import logger from "morgan";
 import bodyParser from "body-parser";
 import config from "./config.js";
 import routes from "./routes/index.js";
@@ -8,6 +7,7 @@ import mongoose from "mongoose";
 import passport from "passport";
 import User from "./models/users.js";
 import session from "express-session";
+// import logger from "morgan";
 
 const app = express();
 
