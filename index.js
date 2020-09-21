@@ -19,7 +19,7 @@ app.use(
     saveUninitialized: false,
   })
 );
-app.use("/css", express.static("views/css"));
+app.use("/css", express.static("css"));
 
 const router = express.Router();
 const uri = process.env.MONGO_CONN_URI;
