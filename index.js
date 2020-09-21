@@ -56,7 +56,7 @@ app.use("/api/v1", routes(router));
 // }
 
 app.use("/api/v1", (req, res, next) => {
-  res.send("Hello");
+  res.send("Hello" + environment);
   next();
 });
 const PORT = process.env.PORT || 3000;
