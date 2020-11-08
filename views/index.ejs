@@ -1,5 +1,6 @@
 <link href="/css/index.css" rel="stylesheet" />
 <h1>EJS</h1>
+
 <% if(!currUser){ %>
 <li class="nav-item">
   <a class="nav-link" href="/login">Login</a>
@@ -10,9 +11,12 @@
 <% }else{ %>
 
 <li class="nav-item">
-  <a class="nav-link" href="#">Logged in as <%= currUser.username%></a>
+  <a class="nav-link" href="#">Logged in as <%= currUser.username %></a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="/logout">LogOut</a>
 </li>
+<script>
+  localStorage.setItem("currUser", "<%=currUser.username%>");
+</script>
 <% } %>
