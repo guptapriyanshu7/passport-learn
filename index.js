@@ -19,6 +19,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+
 app.use("/css", express.static("css"));
 
 const router = express.Router();
